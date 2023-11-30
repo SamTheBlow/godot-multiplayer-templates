@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg50egs1lp6rk"]
+
+[ext_resource type="Script" path="res://example_3d/example_3d.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cdrsh8pqupleh" path="res://example_3d/player.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://c3rnu4rme0342" path="res://icon.svg" id="3_vgahm"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="2"]
+albedo_texture = ExtResource("3_vgahm")
+
+[node name="Example3D" type="Node3D"]
+script = ExtResource("2")
+_player_scene = ExtResource("3")
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+size = Vector3(10, 1, 10)
+material = SubResource("2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)

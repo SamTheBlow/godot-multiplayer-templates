@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpay5trdeq1vx"]
+
+[ext_resource type="Script" path="res://example_user_list/example_user_list.gd" id="1_ijhq5"]
+[ext_resource type="PackedScene" uid="uid://27kq704ns77p" path="res://example_user_list/user.tscn" id="2_mtme6"]
+
+[node name="ExampleUserList" type="Control"]
+layout_mode = 3
+anchor_top = 0.6
+anchor_right = 0.2
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_ijhq5")
+_user_scene = ExtResource("2_mtme6")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Background" type="ColorRect" parent="Margin"]
+layout_mode = 2
+color = Color(0.22, 0.21, 0.25, 0.501961)
+
+[node name="Title" type="Control" parent="Margin"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/Title"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4096.0
+
+[node name="Background" type="ColorRect" parent="Margin/Title/Margin"]
+layout_mode = 2
+color = Color(0.176, 0.168, 0.2, 0.501961)
+
+[node name="Margin" type="MarginContainer" parent="Margin/Title/Margin/Background"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Label" type="Label" parent="Margin/Title/Margin/Background/Margin"]
+layout_mode = 2
+text = "Online users"
+
+[node name="UserList" type="Control" parent="Margin"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/UserList"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = -4.0
+offset_bottom = -4.0
+
+[node name="Background" type="ColorRect" parent="Margin/UserList/Margin"]
+layout_mode = 2
+color = Color(0.088, 0.084, 0.1, 0.501961)
+
+[node name="Content" type="Control" parent="Margin/UserList/Margin"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/UserList/Margin/Content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.05
+anchor_right = 0.97
+anchor_bottom = 0.95
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margin/UserList/Margin/Content/Margin"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Users" type="VBoxContainer" parent="Margin/UserList/Margin/Content/Margin/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

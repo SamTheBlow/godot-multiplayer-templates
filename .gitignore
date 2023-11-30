@@ -1,0 +1,7 @@
+godot-multiplayer-templates/.godot/
+
+godot-multiplayer-templates/.import/
+godot-multiplayer-templates/export.cfg
+godot-multiplayer-templates/export_presets.cfg
+
+godot-multiplayer-templates/*.translation

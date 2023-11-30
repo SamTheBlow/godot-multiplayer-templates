@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbbih58sb0x8n"]
+
+[ext_resource type="Script" path="res://example_messaging/example_messaging.gd" id="1_yef7p"]
+
+[node name="ExampleMessaging" type="Control"]
+layout_mode = 3
+anchor_left = 0.65
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_yef7p")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Control" type="Control" parent="Margin"]
+layout_mode = 2
+
+[node name="ChatBox" type="Control" parent="Margin/Control"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.75
+offset_bottom = -2.0
+
+[node name="ColorRect" type="ColorRect" parent="Margin/Control/ChatBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="ChatText" type="RichTextLabel" parent="Margin/Control/ChatBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="InputMessage" type="LineEdit" parent="Margin/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.75
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_right = -2.0
+placeholder_text = "Enter message..."
+
+[node name="Send" type="Button" parent="Margin/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Send"
+
+[connection signal="text_submitted" from="Margin/Control/InputMessage" to="." method="_on_input_message_text_submitted"]
+[connection signal="pressed" from="Margin/Control/Send" to="." method="_on_send_pressed"]

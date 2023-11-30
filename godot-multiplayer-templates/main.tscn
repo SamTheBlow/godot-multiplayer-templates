@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxictsjud4oy4"]
+
+[ext_resource type="PackedScene" uid="uid://bg50egs1lp6rk" path="res://example_3d/example_3d.tscn" id="1_bs1gt"]
+[ext_resource type="PackedScene" uid="uid://djw1srwh1osf6" path="res://server_setup/server_setup.tscn" id="2_6t7an"]
+[ext_resource type="PackedScene" uid="uid://dbbih58sb0x8n" path="res://example_messaging/example_messaging.tscn" id="3_lnvdm"]
+[ext_resource type="PackedScene" uid="uid://bpay5trdeq1vx" path="res://example_user_list/example_user_list.tscn" id="4_ton0g"]
+
+[node name="Main" type="Node"]
+
+[node name="Example3D" parent="." instance=ExtResource("1_bs1gt")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ServerSetup" parent="CanvasLayer" instance=ExtResource("2_6t7an")]
+
+[node name="ExampleMessaging" parent="CanvasLayer" instance=ExtResource("3_lnvdm")]
+
+[node name="ExampleUserList" parent="CanvasLayer" instance=ExtResource("4_ton0g")]
