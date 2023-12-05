@@ -5,7 +5,7 @@ extends Node3D
 @export var _player_scene: PackedScene
 
 
-func _ready():
+func _ready() -> void:
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	multiplayer.peer_connected.connect(_on_peer_connected)

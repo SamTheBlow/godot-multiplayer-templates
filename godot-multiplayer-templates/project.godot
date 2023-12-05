@@ -10,11 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Multiplayer Test"
+config/name="Multiplayer Templates"
 config/description="Tests and templates for making multiplayer games in Godot"
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
 
 [input]
 
